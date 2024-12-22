@@ -2,10 +2,21 @@ import React from "react";
 import { useTheme } from "../context/ThemeContext";
 
 function ShoppingCart({ items = [], handleDeleteItem, total }) {
+  const { theme } = useTheme();
   return (
-    <div className="lg:w-2/3 sm:w-full bg-[#fff] flex flex-col justify-center items-center">
-      <div className="w-full py-3 px-4 flex justify-between">
-        <h2 className="text-black mb-4 font-bold text-2xl">Shopping Cart:</h2>
+    <div
+      className={`lg:w-2/3 sm:w-full flex flex-col justify-center items-center ${
+        theme === "dark" ? "bg-[#121212]" : "bg-[#fff]"
+      }`}
+    >
+      <div className="w-full py-4 px-4 flex items-center justify-between">
+        <h2
+          className={` mb-4 font-bold text-2xl ${
+            theme === "dark" ? "text-gray-200" : "text-black"
+          }`}
+        >
+          Shopping Cart:
+        </h2>
         <span>
           <strong>Total: ${total}</strong>
         </span>
@@ -16,7 +27,11 @@ function ShoppingCart({ items = [], handleDeleteItem, total }) {
           {items.map((item) => (
             <li
               key={item.id}
-              className="text-black bg-slate-200  p-4 rounded w-full flex flex-col gap-5"
+              className={`p-4 rounded w-full flex flex-col gap-5 ${
+                theme === "dark"
+                  ? "bg-black text-white"
+                  : "bg-slate-200 text-black"
+              }`}
             >
               <p className="flex justify-between">
                 <span className="font-bold">{item.title}</span>{" "}

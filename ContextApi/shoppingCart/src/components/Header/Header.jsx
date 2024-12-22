@@ -11,7 +11,7 @@ function Header() {
         theme === "dark" ? "bg-[#121212] text-white" : "bg-white text-black"
       }`}
     >
-      <div className="w-full flex items-center justify-around">
+      <div className="w-full mx-20 flex items-center justify-between">
         <div className="text-2xl font-bold">
           <Link
             to="/"

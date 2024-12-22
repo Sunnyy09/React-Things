@@ -1,8 +1,15 @@
 import React from "react";
+import { useTheme } from "../context/ThemeContext";
 
 function Products({ title, details, price, reviews, addItemToCart, id }) {
+  const { theme } = useTheme();
+
   return (
-    <div className="bg-white w-full rounded-md">
+    <div
+      className={`w-full rounded-md ${
+        theme === "dark" ? "bg-[#121212]" : "bg-white"
+      }`}
+    >
       <div className="pt-6 w-[580px] max-h-[350px]">
         <nav aria-label="Breadcrumb">
           <ol
@@ -11,7 +18,12 @@ function Products({ title, details, price, reviews, addItemToCart, id }) {
           >
             <li>
               <div class="flex items-center">
-                <a href="#" class="mr-2 text-sm font-medium text-gray-900">
+                <a
+                  href="#"
+                  class={`mr-2 text-sm font-medium  ${
+                    theme === "dark" ? "text-gray-200" : "text-gray-900"
+                  }`}
+                >
                   Men
                 </a>
                 <svg
@@ -20,7 +32,9 @@ function Products({ title, details, price, reviews, addItemToCart, id }) {
                   viewBox="0 0 16 20"
                   fill="currentColor"
                   aria-hidden="true"
-                  class="h-5 w-4 text-gray-300"
+                  class={`h-5 w-4  ${
+                    theme === "dark" ? "text-white" : "text-gray-300"
+                  }`}
                 >
                   <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
                 </svg>
@@ -28,7 +42,12 @@ function Products({ title, details, price, reviews, addItemToCart, id }) {
             </li>
             <li>
               <div class="flex items-center">
-                <a href="#" class="mr-2 text-sm font-medium text-gray-900">
+                <a
+                  href="#"
+                  class={`mr-2 text-sm font-medium  ${
+                    theme === "dark" ? "text-white" : "text-gray-900"
+                  }`}
+                >
                   Clothing
                 </a>
                 <svg
@@ -48,7 +67,9 @@ function Products({ title, details, price, reviews, addItemToCart, id }) {
               <a
                 href="#"
                 aria-current="page"
-                class="font-medium text-gray-500 hover:text-gray-600"
+                class={`font-medium  hover:text-gray-600 ${
+                  theme === "dark" ? "text-white" : " text-gray-500"
+                }`}
               >
                 {/* Basic Tee 6-Pack */}
                 {title}
@@ -86,7 +107,11 @@ function Products({ title, details, price, reviews, addItemToCart, id }) {
         {/* <!-- Product info --> */}
         <div class="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pt-8">
           <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-            <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+            <h1
+              class={`text-2xl font-bold tracking-tight  sm:text-3xl ${
+                theme === "dark" ? "text-gray-300" : "text-gray-900"
+              }`}
+            >
               {/* Basic Tee 6-Pack */} {title}
             </h1>
           </div>
@@ -94,16 +119,23 @@ function Products({ title, details, price, reviews, addItemToCart, id }) {
           {/* <!-- Options --> */}
           <div class="mt-4 lg:row-span-3 lg:mt-0">
             <h2 class="sr-only">Product information</h2>
-            <p class="text-3xl tracking-tight text-gray-900">${price}</p>
+            <p
+              class={`text-3xl tracking-tight ${
+                theme === "dark" ? "text-white" : "text-gray-900"
+              }`}
+            >
+              ${price}
+            </p>
 
             {/* <!-- Reviews --> */}
             <div class="mt-6">
               <h3 class="sr-only">Reviews</h3>
               <div class="flex items-center">
                 <div class="flex items-center">
-                  {/* <!-- Active: "text-gray-900", Default: "text-gray-200" --> */}
                   <svg
-                    class="size-5 shrink-0 text-gray-900"
+                    class={`size-5 shrink-0 ${
+                      theme === "dark" ? "text-white" : "text-gray-900"
+                    }`}
                     viewBox="0 0 20 20"
                     fill="currentColor"
                     aria-hidden="true"
@@ -116,7 +148,9 @@ function Products({ title, details, price, reviews, addItemToCart, id }) {
                     />
                   </svg>
                   <svg
-                    class="size-5 shrink-0 text-gray-900"
+                    class={`size-5 shrink-0 ${
+                      theme === "dark" ? "text-white" : "text-gray-900"
+                    }`}
                     viewBox="0 0 20 20"
                     fill="currentColor"
                     aria-hidden="true"
@@ -129,7 +163,9 @@ function Products({ title, details, price, reviews, addItemToCart, id }) {
                     />
                   </svg>
                   <svg
-                    class="size-5 shrink-0 text-gray-900"
+                    class={`size-5 shrink-0 ${
+                      theme === "dark" ? "text-white" : "text-gray-900"
+                    }`}
                     viewBox="0 0 20 20"
                     fill="currentColor"
                     aria-hidden="true"
@@ -142,7 +178,9 @@ function Products({ title, details, price, reviews, addItemToCart, id }) {
                     />
                   </svg>
                   <svg
-                    class="size-5 shrink-0 text-gray-900"
+                    class={`size-5 shrink-0 ${
+                      theme === "dark" ? "text-white" : "text-gray-900"
+                    }`}
                     viewBox="0 0 20 20"
                     fill="currentColor"
                     aria-hidden="true"
@@ -155,7 +193,9 @@ function Products({ title, details, price, reviews, addItemToCart, id }) {
                     />
                   </svg>
                   <svg
-                    class="size-5 shrink-0 text-gray-200"
+                    class={`size-5 shrink-0 ${
+                      theme === "dark" ? "text-gray-900" : "text-white"
+                    }`}
                     viewBox="0 0 20 20"
                     fill="currentColor"
                     aria-hidden="true"
@@ -194,10 +234,20 @@ function Products({ title, details, price, reviews, addItemToCart, id }) {
 
           <div class="lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pr-8">
             <div class="mt-8">
-              <h2 class="text-sm font-medium text-gray-900">Details</h2>
+              <h2
+                class={`text-sm font-medium ${
+                  theme === "dark" ? "text-white" : "text-gray-900"
+                }`}
+              >
+                Details
+              </h2>
 
               <div class="mt-4 space-y-6">
-                <p class="text-sm text-gray-600">
+                <p
+                  class={`text-sm ${
+                    theme === "dark" ? "text-gray-300" : "text-gray-600"
+                  }`}
+                >
                   {/* The 6-Pack includes two black, two white, and two heather gray
                   Basic Tees. Sign up for our subscription service and be the
                   first to get new, exciting colors, like our upcoming

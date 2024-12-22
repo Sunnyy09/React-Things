@@ -10,7 +10,7 @@ function DisplayProducts() {
   const { handleAddItems } = useContext(CartContext);
 
   return (
-    <div className="p-4 w-full">
+    <div className="w-full py-10 px-4">
       <div className="w-full">
         <ul className="gap-x-4 gap-y-5 flex flex-wrap justify-center">
           {carts.map((cart) => (
