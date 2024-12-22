@@ -12,12 +12,18 @@ export const CartProvider = ({ children }) => {
     }
   };
 
+  const totalPrice = parseFloat(
+    items.reduce((total, item) => total + item.price, 0).toFixed(2)
+  );
+
   const handleDeleteItems = (id) => {
     setItems(items.filter((item) => item.id !== id));
   };
 
   return (
-    <CartContext.Provider value={{ items, handleAddItems, handleDeleteItems }}>
+    <CartContext.Provider
+      value={{ items, handleAddItems, handleDeleteItems, totalPrice }}
+    >
       {children}
     </CartContext.Provider>
   );

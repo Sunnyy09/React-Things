@@ -1,9 +1,9 @@
 import React from "react";
 
-function CartComponent({ title, details, price, reviews, addItemToCart, id }) {
+function Products({ title, details, price, reviews, addItemToCart, id }) {
   return (
-    <div className="bg-white rounded-md">
-      <div className="pt-6 w-[580px] max-h-[550px] flex flex-wrap">
+    <div className="bg-white w-full rounded-md">
+      <div className="pt-6 w-[580px] max-h-[350px]">
         <nav aria-label="Breadcrumb">
           <ol
             role="list"
@@ -185,7 +185,7 @@ function CartComponent({ title, details, price, reviews, addItemToCart, id }) {
                   e.preventDefault();
                   addItemToCart({ id, title, price, reviews });
                 }}
-                class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                class="mt-10 flex lg:w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
                 Add to bag
               </button>
@@ -213,4 +213,4 @@ function CartComponent({ title, details, price, reviews, addItemToCart, id }) {
   );
 }
 
-export default CartComponent;
+export default Products;
