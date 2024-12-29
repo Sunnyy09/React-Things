@@ -1,7 +1,13 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 function Header() {
+  const navigate = useNavigate();
+  const handleSelectChange = (event) => {
+    const selectedValue = event.target.value;
+    navigate(`/dashboard${selectedValue}`);
+  };
+
   return (
     <header className="w-full bg-gray-400">
       <div className="h-full p-2">
@@ -26,16 +32,14 @@ function Header() {
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  to="/dashboard"
-                  className={({ isActive }) =>
-                    `${
-                      isActive ? "text-purple-800" : "text-gray-800"
-                    } text-lg font-semibold`
-                  }
+                <select
+                  onChange={handleSelectChange}
+                  className="bg-gray-200 text-gray-800 font-semibold p-2 rounded"
                 >
-                  Dashborad
-                </NavLink>
+                  <option value="">Dashboard</option>
+                  <option value="/all-posts">All Posts</option>
+                  <option value="/add-post">Add Post</option>
+                </select>
               </li>
               {/* <li>
                 <NavLink

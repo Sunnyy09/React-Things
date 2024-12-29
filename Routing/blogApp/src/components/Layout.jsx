@@ -1,11 +1,11 @@
-import { Outlet, Link } from "react-router-dom";
+// import { Outlet, Link } from "react-router-dom";
 
-function Dashboard() {
-  return (
-    <div>
-      <Outlet />
-    </div>
-  );
-}
+// function Dashboard() {
+//   return (
+//     <div>
+//       <Outlet />
+//     </div>
+//   );
+// }
 
-export default Dashboard;
+// export default Dashboard;
