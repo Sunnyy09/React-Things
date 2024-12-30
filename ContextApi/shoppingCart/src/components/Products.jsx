@@ -48,7 +48,7 @@ function Products({ title, details, price, reviews, addItemToCart, id }) {
                     theme === "dark" ? "text-white" : "text-gray-900"
                   }`}
                 >
-                  Clothing
+                  Electronics
                 </a>
                 <svg
                   width="16"

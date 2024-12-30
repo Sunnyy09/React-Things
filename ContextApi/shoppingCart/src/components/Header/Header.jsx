@@ -7,7 +7,7 @@ function Header() {
 
   return (
     <header
-      className={`w-full h-20 p-2 flex justify-center items-center ${
+      className={`w-full sticky top-0 h-20 p-2 flex justify-center items-center ${
         theme === "dark" ? "bg-[#121212] text-white" : "bg-white text-black"
       }`}
     >

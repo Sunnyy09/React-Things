@@ -6,9 +6,7 @@ import DisplayProducts from "./pages/DisplayProducts";
 import DisplayItems from "./pages/DisplayCart";
 import { useTheme } from "./context/ThemeContext";
 import Home from "./components/Home/Home";
-
-// commit :- add product details component and
-//           wroking on routing in more better way
+import ProductDetails from "./components/ProductDetails";
 
 const App = () => {
   const { theme } = useTheme(); // This now works because ThemeProvider is above App
@@ -28,6 +26,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<DisplayProducts />} />
             <Route path="/cart" element={<DisplayItems />} />
+            <Route path="/products/:id" element={<ProductDetails />} />
           </Routes>
         </div>
       </div>

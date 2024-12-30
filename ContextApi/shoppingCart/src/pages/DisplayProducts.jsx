@@ -1,30 +1,29 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { useState } from "react";
 import { CartContext } from "../context/CartContext";
 import { products } from "../data/products";
 import Products from "../components/Products";
 
 function DisplayProducts() {
-  const [carts, setCarts] = useState(products);
   const { handleAddItems } = useContext(CartContext);
 
   return (
     <div className="w-full py-10 px-4">
       <div className="w-full">
         <ul className="gap-x-4 gap-y-5 flex flex-wrap justify-center">
-          {carts.map((cart) => (
-            <li key={cart.id}>
+          {products.map((product) => (
+            <Link key={product.id} to={`/products/${product.id}`}>
               <Products
-                title={cart.title}
-                price={cart.price}
-                reviews={cart.reviews}
-                detail={cart.details}
-                id={cart.id}
-                {...cart}
+                title={product.title}
+                price={product.price}
+                reviews={product.reviews}
+                detail={product.details}
+                id={product.id}
+                {...product}
                 addItemToCart={handleAddItems}
               />
-            </li>
+            </Link>
           ))}
         </ul>
       </div>
