@@ -10,10 +10,10 @@ function ProductDetails() {
   const product = products.find((product) => product.id === parseInt(id));
 
   return (
-    <div className={` min-h-[90vh] p-6`}>
-      <div className="h-[80vh] flex py-4 px-6">
+    <div className={`h-screen p-6`}>
+      <div className="min-h-[80vh] flex justify-center py-4 px-6">
         <div className="w-1/2">
-          <img src={product.image} alt={product.title} />
+          <img src={product.image} alt={product.title} className="w-full" />
         </div>
         <div className="w-1/2 mx-6">
           <h1 className="text-3xl font-bold leading-relaxed">

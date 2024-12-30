@@ -14,7 +14,7 @@ const App = () => {
   return (
     <CartProvider>
       <div
-        className={`min-h-screen w-full flex flex-wrap ${
+        className={`min-h-screen w-full flex flex-col ${
           theme === "dark"
             ? "bg-[#000000] text-white"
             : "bg-slate-200 text-black"
