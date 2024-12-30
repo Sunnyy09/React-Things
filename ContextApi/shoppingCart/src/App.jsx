@@ -2,10 +2,13 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { CartProvider } from "./context/CartContext";
 import Header from "./components/Header/Header";
-import DisplayProducts from "./components/DisplayProducts";
-import DisplayItems from "./components/DisplayCart";
+import DisplayProducts from "./pages/DisplayProducts";
+import DisplayItems from "./pages/DisplayCart";
 import { useTheme } from "./context/ThemeContext";
 import Home from "./components/Home/Home";
+
+// commit :- add product details component and
+//           wroking on routing in more better way
 
 const App = () => {
   const { theme } = useTheme(); // This now works because ThemeProvider is above App

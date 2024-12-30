@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { useState } from "react";
 import { CartContext } from "../context/CartContext";
 import { products } from "../data/products";
-import Products from "./Products";
+import Products from "../components/Products";
 
 function DisplayProducts() {
   const [carts, setCarts] = useState(products);
