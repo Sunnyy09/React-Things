@@ -10,9 +10,50 @@ function Header() {
       <div className="w-full h-full p-2">
         <nav className="h-full flex mx-8 justify-between items-center">
           <div className="ml-6">
-            <h1 className="text-3xl text-gray-700 font-bold">Logo</h1>
+            <Link to="/" className="text-3xl text-gray-700 font-bold">
+              Logo
+            </Link>
           </div>
-
+          <div className="w-full flex justify-center items-center">
+            <ul className="flex w-full items-center justify-center gap-6">
+              <li>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    `${
+                      isActive ? "text-indigo-700 underline" : "text-gray-800"
+                    } text-lg font-semibold hover:text-indigo-700`
+                  }
+                >
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/about"
+                  className={({ isActive }) =>
+                    `${
+                      isActive ? "text-indigo-700 underline" : "text-gray-800"
+                    } text-lg font-semibold hover:text-indigo-700`
+                  }
+                >
+                  About
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/contact"
+                  className={({ isActive }) =>
+                    `${
+                      isActive ? "text-indigo-700 underline" : "text-gray-800"
+                    } text-lg font-semibold hover:text-indigo-700`
+                  }
+                >
+                  Contact
+                </NavLink>
+              </li>
+            </ul>
+          </div>
           <div className="space-x-3 flex">
             <Link
               to="/dashboard"
