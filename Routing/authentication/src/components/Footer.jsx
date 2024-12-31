@@ -2,9 +2,9 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="bg-gray-400">
+    <footer className="bg-gray-300 h-[34vh]">
       <div>
-        <h1>Logo</h1>
+        <h1 className="text-center text-2xl font-bold">Footer</h1>
       </div>
     </footer>
   );
